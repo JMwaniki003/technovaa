@@ -1,4 +1,5 @@
 import React from "react";
+import { Phone, Mail, MapPin, Send } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -35,21 +36,25 @@ const Contact = () => {
           ></textarea>
           <button
             type="submit"
-            className="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition duration-300"
+            className="flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition duration-300"
           >
+            <Send className="w-5 h-5" />
             Send Message
           </button>
         </form>
 
-        <div className="mt-12 text-gray-700">
-          <p>
-            📞 <strong>Phone:</strong> +254 717 163 105
+        <div className="mt-12 text-gray-700 space-y-3 flex flex-col items-center">
+          <p className="flex items-center gap-2">
+            <Phone className="w-5 h-5 text-blue-600" />
+            <strong>Phone:</strong> +254 717 163 105
           </p>
-          <p>
-            📧 <strong>Email:</strong> support@technovey.com
+          <p className="flex items-center gap-2">
+            <Mail className="w-5 h-5 text-blue-600" />
+            <strong>Email:</strong> support@technovey.com
           </p>
-          <p>
-            📍 <strong>Location:</strong> Nairobi, Kenya
+          <p className="flex items-center gap-2">
+            <MapPin className="w-5 h-5 text-blue-600" />
+            <strong>Location:</strong> Nairobi, Kenya
           </p>
         </div>
       </div>
