@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Message sent successfully!");
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
     <section id="contact" className="py-20 bg-blue-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
@@ -13,24 +25,36 @@ const Contact = () => {
           Send us a message — we’d love to hear from you!
         </p>
 
-        <form className="max-w-3xl mx-auto bg-white rounded-2xl shadow-md p-8">
+        <form
+          onSubmit={handleSubmit}
+          className="max-w-3xl mx-auto bg-white rounded-2xl shadow-md p-8"
+        >
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
               className="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none"
               required
             />
             <input
               type="email"
+              name="email"
               placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
               className="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none"
               required
             />
           </div>
           <textarea
+            name="message"
             placeholder="Your Message"
             rows="5"
+            value={formData.message}
+            onChange={handleChange}
             className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none mb-6"
             required
           ></textarea>
