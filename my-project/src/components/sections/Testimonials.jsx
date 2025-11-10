@@ -2,13 +2,7 @@ import React from "react";
 
 const Testimonials = () => {
   const testimonials = [
-    {
-      name: "Alice M.",
-      feedback:
-        "Technovey products are top-notch! My SmartWatch 4 has made fitness tracking effortless — sleek design and super accurate.",
-      image: "https://randomuser.me/api/portraits/women/65.jpg",
-      role: "Fitness Enthusiast",
-    },
+    
     {
       name: "James K.",
       feedback:
@@ -35,13 +29,22 @@ const Testimonials = () => {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition duration-300"
+              className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition duration-300 flex flex-col items-center md:items-start"
             >
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-blue-500"
-              />
+              {/* For the first testimonial, show product collage */}
+              {index === 0 ? (
+                <img
+                  src={item.image}
+                  alt="Products"
+                  className="w-32 h-32 rounded-2xl mb-4 object-cover border-4 border-blue-500"
+                />
+              ) : (
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-20 h-20 rounded-full mb-4 border-4 border-blue-500"
+                />
+              )}
               <h3 className="text-xl font-semibold text-blue-700">{item.name}</h3>
               <p className="text-gray-500 text-sm mb-3">{item.role}</p>
               <p className="text-gray-700 italic">“{item.feedback}”</p>

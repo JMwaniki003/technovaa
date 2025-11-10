@@ -9,6 +9,10 @@ import Testimonials from "./components/sections/Testimonials";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/layout/Footer";
 
+
+
+
+
 const App = () => {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
@@ -18,6 +22,7 @@ const App = () => {
        <About />
       <Features />
       <Products />
+      
        
       
       <Testimonials />
