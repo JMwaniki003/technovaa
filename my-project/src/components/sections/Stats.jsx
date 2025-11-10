@@ -8,12 +8,15 @@ const Stats = () => {
   ];
 
   return (
-    <section id="stats" className="py-16 bg-blue-600 text-white text-center">
+    <section id="stats" className="py-16 bg-gray-900 text-white text-center">
       <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 px-6">
         {stats.map((stat, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            className="p-6 rounded-lg hover:bg-gray-800 transition-colors duration-300"
+          >
             <h3 className="text-5xl font-bold">{stat.value}</h3>
-            <p className="text-lg mt-2">{stat.label}</p>
+            <p className="text-lg mt-2 text-gray-300">{stat.label}</p>
           </div>
         ))}
       </div>

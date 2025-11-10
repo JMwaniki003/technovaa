@@ -14,10 +14,12 @@ const App = () => {
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <Header />
       <Hero />
+      <Stats />
+       <About />
       <Features />
       <Products />
-      <About />
-      <Stats />
+       
+      
       <Testimonials />
       <Contact />
       <Footer />

@@ -2,9 +2,18 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-r from-blue-900 to-blue-600 text-white py-20 px-6 flex flex-col md:flex-row items-center justify-center gap-10">
-      {/* Left side text */}
-      <div className="max-w-lg text-center md:text-left">
+    <section
+      className="relative bg-cover bg-center text-white py-28 px-6 flex items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1400&q=80')",
+      }}
+    >
+      {/* Neutral dark overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-2xl text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Discover the Future of Electronics
         </h1>
@@ -12,18 +21,9 @@ const Hero = () => {
           From smart gadgets to high-performance devices — Technovey brings you
           the latest technology for your digital lifestyle.
         </p>
-        <button className="bg-white text-blue-700 font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-blue-100 transition duration-300">
+        <button className="bg-white text-gray-900 font-semibold py-2 px-6 rounded-lg shadow-md hover:scale-105 hover:bg-gray-100 transition-transform duration-300">
           Shop Now
         </button>
-      </div>
-
-      {/* Right side image */}
-      <div className="w-full md:w-1/2 flex justify-center">
-        <img
-          src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
-          alt="Electronic devices showcase"
-          className="w-80 md:w-96 drop-shadow-2xl rounded-xl"
-        />
       </div>
     </section>
   );
